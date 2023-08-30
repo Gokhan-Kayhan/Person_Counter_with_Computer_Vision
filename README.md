@@ -10,6 +10,7 @@ The main parts of the project are :
 - Controlling some systems with Raspberry Pi according to the total number of person.
 
 ---
+</br >
 
 ## Computer Vision Part
 
@@ -20,24 +21,30 @@ Converting the frame into gray scale with _"cv2.cvtColor(frame, cv2.COLOR_BGR2GR
 
 <img src="figures/opencv.png"  />  
 
+</br >
 
 Next, I used _"cv2.findContours"_ method to find contours in frame(The contour is a curve that connects all pixels of the same color along the border). And calculated their areas. Because when the area is greater than a specified value, that contour is considered as a person.
 
 Then a rectangle is drawn around the detected person and by checking the center point and its change, their walking direction is found. 
-
+</br >
 
 <img src="figures/detection.png"  />  
 
 ---
+</br >
+
 
 ## Cloud and Model Part
 The next part is, sending the data to the cloud system and taking it from there. This part was made with _"ThingSpeak"_ cloud service. Then this data was taken from the cloud and saved in a csv file.(It did not used directly, because it was necessary condition for final assignment)
 
 After that, a model was trained with total person and hour data and a relationship between them was obtained. Thus, it can be estimated how crowded a place will be at what times of the day.
 
+</br >
+
 <img src="figures/cloud.png"  />  
 
 ---
+</br >
 
 ## System Design Part
 
@@ -48,5 +55,7 @@ After that, a model was trained with total person and hour data and a relationsh
 - DC motor and LEDs
 
 The following system represents a closed area. The Leds represents the lighting system and the DC motor represents ventilation system in real life. Using the total number of people data, they are controlled simultaneously with the Raspberry Pi. For example the idea is, when people start to get crowded, the ventilation system works faster.
+
+</br >
 
 <img src="figures/system.png"  />
